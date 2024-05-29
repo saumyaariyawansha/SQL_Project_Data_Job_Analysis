@@ -44,7 +44,7 @@ LIMIT 10;
 ### 2. Skills for top paying Data Analyst jobs
 To investigate which are the relevant skills needed for top paying 'Data Analyst' jobs that can be performed from remote locations.
 
-```
+```sql
 WITH top_paying_jobs AS (
     SELECT
         job_id,
@@ -71,7 +71,7 @@ ORDER BY salary_year_avg DESC;
 ### 3. Most in demand skills for all Data Analyst job roles
 To identify the skills in highest demand for 'Data Analyst', remote job opportunities.
 
-```
+```sql
 SELECT 
     skills, 
     COUNT(skills_job_dim.job_id) AS demand_number_of_jobs
@@ -89,7 +89,7 @@ The objective was to reveal how different skills impact salary levels for Data A
 
 Hence I have calculated the average salary associated with each skill relevant for Data Analyst positions, focusing on salaries with specified roles regardless of the location. 
 
-```
+```sql
 SELECT 
     skills, 
     ROUND(AVG(salary_year_avg),0) AS yearly_avg_salary
@@ -111,7 +111,7 @@ The objective was to identify the high demand and high paying skiils. I have fil
 
 This analysis provides us with strategic insights for career development in Data Analysis uncovering target skills that offer both job security (high demand) and financial benefits (high salary) in the long run.
 
-```
+```sql
 With skills_demand AS (
     SELECT 
     skills_dim.skill_id,
